@@ -3,10 +3,17 @@ public class SearchInArray {
 
         int[] array_one = {11, 23, 342, 44, 5, 20, 45};
         int[] array_two = {1, 5, 13, 20, 55, 66, 242, 64432};
-        printMaxValue(array_one);
+        int[] array_no_sort = {23, 43, 55, 21442, 213, 2342, 6, 32, 42, 256, 24235, 654, 464, 2423423, 4341434, 567};
         int key = 20;
-        int position = binarySearch(array_two, key);
-        System.out.println(key + " position is " + position);
+
+        System.out.println("printMaxValue: ");
+        printMaxValue(array_one);
+
+        System.out.println("binarySearch: ");
+        binarySearch(array_two, key);
+
+        System.out.println("bubbleSort: ");
+        bubbleSort(array_no_sort);
     }
 
     static void printMaxValue(int[] array) {
@@ -52,5 +59,31 @@ public class SearchInArray {
         }
         return -1;
     }
+
+    static void bubbleSort(int[] array) {
+        int comparisonsDone = 0;
+        int swapsDone = 0;
+        boolean sorted = false;
+        while (!sorted) {
+            sorted = true;
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i] > array[i + 1]) {
+                    System.out.println("Swap " + array[i] + " and " + array[i + 1]);
+                    int temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                    swapsDone++;
+                    sorted = false;
+                } else {
+                    System.out.println("No need to change elements " + i + " and " + (i + 1));
+                }
+                comparisonsDone++;
+            }
+        }
+        System.out.println("Array size = " + array.length);
+        System.out.println("Comparisons done = " + comparisonsDone);
+        System.out.println("Swaps done = " + swapsDone);
+    }
+
 
 }
