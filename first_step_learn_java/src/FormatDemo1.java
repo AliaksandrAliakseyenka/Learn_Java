@@ -13,6 +13,6 @@ public class FormatDemo1 {
 
         int num1 = 20;
         int num2 = 30;
-        System.out.println(num2+num1);
+        System.out.println(num2 + num1);
     }
 }

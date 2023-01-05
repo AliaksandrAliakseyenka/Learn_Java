@@ -21,5 +21,11 @@ public class WhileFor {
             System.out.println(i);
         }
 
+        System.out.println("Print Array:");
+        int[] array = {10, 20, 30, 40, 50, 60, 70, 80, 90};
+        for (int i = 0; i <= 100; i++) {
+            System.out.println(array[i]);
+        }
+
     }
 }
